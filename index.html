@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>3 Months Anniversary & Photo Carousel</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #fff0f5;
+      color: #4a2c2a;
+      text-align: center;
+      padding: 40px 20px;
+      line-height: 1.6;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    h1 {
+      font-size: 2.8em;
+      margin-bottom: 20px;
+      color: #d6336c;
+    }
+    p {
+      font-size: 1.3em;
+      margin-bottom: 25px;
+    }
+    .carousel {
+      position: relative;
+      max-width: 500px;
+      margin: 40px auto 0;
+      overflow: hidden;
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    }
+    .carousel img {
+      width: 100%;
+      display: none;
+      border-radius: 15px;
+    }
+    .carousel img.active {
+      display: block;
+    }
+    .buttons {
+      margin-top: 15px;
+    }
+    button {
+      background-color: #f87171;
+      border: none;
+      color: white;
+      padding: 10px 25px;
+      margin: 0 12px;
+      border-radius: 20px;
+      cursor: pointer;
+      font-size: 1.1em;
+      transition: background-color 0.3s;
+    }
+    button:hover {
+      background-color: #ef4444;
+    }
+  </style>
+</head>
+<body>
+  <h1>Thank You for These Amazing 3 Months</h1>
+  <p>
+    I feel so grateful to have you in my life. Every moment we share together makes me happier and stronger. You bring light, joy, and love to my days, and I truly appreciate everything you do and who you are.
+  </p>
+  <p>
+    Being with you is a beautiful journey, and I’m excited for all the memories we will create in the future. Thank you for being my partner, my friend, and my inspiration.
+  </p>
+  <p>
+    I love you more than words can say, and I’m so lucky to have you by my side. Here’s to us and many more months to come. ❤️
+  </p>
+
+  <div class="carousel">
+    <img src="https://media.discordapp.net/attachments/1293380907516035133/1404634938757877830/AP1GczNs_lh9_bU4HIZLNLPe9yY4xIfflyUiiWTny7ntiKPIe7iG5NBa2_Ihw515-h641-s-no-gm.png?ex=689be7ba&is=689a963a&hm=3fcd1d2e86c80f4f108044922a15b28e6095db7c0b2c6119979daae39018ae0e&=&format=webp&quality=lossless&width=335&height=417" alt="Photo 1" class="active" />
+    <img src="https://media.discordapp.net/attachments/1293380907516035133/1404634939521237032/IMG_20250727_113214_484.jpg?ex=689be7ba&is=689a963a&hm=81504c0c69efb5b1bef1b6f520aa0a9f416bb4220e0ee52e4dc80b837b4665e1&=&format=webp&width=417&height=417" alt="Photo 2" />
+    <img src="https://media.discordapp.net/attachments/1293380907516035133/1404636584086863964/Screenshot_20250811_222254_Snapchat.jpg?ex=689be942&is=689a97c2&hm=43e966447baaa1ec10966cfacfa3177141facd0a7e28a26ebe8228d55a8807ba&=&format=webp&width=405&height=521" alt="Photo 3" />
+    <img src="https://media.discordapp.net/attachments/1293380907516035133/1404634940653572331/Dia_mundial_do_livro_23_de_abril_sepia_colagem_post_para_instagram.png?ex=689be7ba&is=689a963a&hm=c8bddf5fe683b04e0754c8b9d723e3ef987e3e9b76215d3aad08c94c213929ab&=&format=webp&quality=lossless&width=417&height=417" alt="Photo 4" />
+  </div>
+  <div class="buttons">
+    <button id="prev">Previous</button>
+    <button id="next">Next</button>
+  </div>
+
+  <script>
+    const images = document.querySelectorAll('.carousel img');
+    let currentIndex = 0;
+
+    function showImage(index) {
+      images.forEach((img, i) => {
+        img.classList.toggle('active', i === index);
+      });
+    }
+
+    document.getElementById('prev').addEventListener('click', () => {
+      currentIndex = (currentIndex - 1 + images.length) % images.length;
+      showImage(currentIndex);
+    });
+
+    document.getElementById('next').addEventListener('click', () => {
+      currentIndex = (currentIndex + 1) % images.length;
+      showImage(currentIndex);
+    });
+  </script>
+</body>
+</html>
